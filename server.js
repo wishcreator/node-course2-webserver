@@ -25,11 +25,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintance.hbs',{
-    pageTitle: 'maintance Page'
-  });
-});
+// app.use((req, res, next) => {
+//   res.render('maintance.hbs',{
+//     pageTitle: 'maintance Page'
+//   });
+// });
 
 app.get('/',(req, res) => {
   res.render('home.hbs',{
@@ -48,6 +48,13 @@ app.get('/bad', (req, res) => {
   res.send({
     statusCode: 400,
     errorMessage: 'Page not found'
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs',{
+    pageTitle: 'Portfolio',
+    portfolio: 'Portfolio page here'
   });
 });
 
